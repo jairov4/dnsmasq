@@ -295,8 +295,10 @@ int main (int argc, char **argv)
       dhcp_init();
 #   ifdef HAVE_LINUX_NETWORK
       if (!option_bool(OPT_NO_PING))
-	need_cap_net_raw = 1;
-      need_cap_net_admin = 1;
+        {
+          need_cap_net_raw = 1;
+          need_cap_net_admin = 1;
+        }
 #   endif
     }
   
